@@ -1,4 +1,4 @@
-package sortings;
+package ua.com.nov.sortings;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -62,13 +62,13 @@ class Test {
         for (int i = 0; i < array.length; i++) {
             array[i] = rnd.nextInt(1000);
         }
-        // library sort
+        // ua.com.nov.library sort
         int[] expected = array.clone();
         Arrays.sort(expected);
         // lab sort
         int[] actual = array.clone();
         InsertionSorter.sort(actual);
-        // compare results: library vs lab
+        // compare results: ua.com.nov.library vs lab
         if (!Arrays.equals(actual, expected)) {
             throw new AssertionError("expected = " + Arrays.toString(expected) + " but actual  = " + Arrays.toString(actual));
         }

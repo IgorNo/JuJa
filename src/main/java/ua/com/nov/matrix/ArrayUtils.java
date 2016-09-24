@@ -1,4 +1,4 @@
-package matrix;
+package ua.com.nov.matrix;
 
 public class ArrayUtils {
 

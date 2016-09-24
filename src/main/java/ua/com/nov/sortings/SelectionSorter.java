@@ -1,4 +1,4 @@
-package sortings;
+package ua.com.nov.sortings;
 
 /*Переписать алгоритм сортировки выборками:
 

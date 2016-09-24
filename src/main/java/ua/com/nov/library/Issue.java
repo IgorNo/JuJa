@@ -1,4 +1,4 @@
-package library;
+package ua.com.nov.library;
 
 public class Issue {
     private String name;

@@ -1,4 +1,4 @@
-package arrays;
+package ua.com.nov.arrays;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -97,7 +97,7 @@ public class Array {
         /*4. Объединение двух массивов*/
         int[] intArray1 = { 1, 2, 3, 4, 5 };
         int[] intArray2 = { 6, 7, 8, 9, 10 };
-// Apache Commons Lang library
+// Apache Commons Lang ua.com.nov.library
 //        int[] combinedIntArray = ArrayUtils.addAll(intArray, intArray2);
 
         /*5. Объявление массива в одной строке*/

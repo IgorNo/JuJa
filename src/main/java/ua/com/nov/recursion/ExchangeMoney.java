@@ -1,4 +1,4 @@
-package recursion;
+package ua.com.nov.recursion;
 
 public class ExchangeMoney {
 

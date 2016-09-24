@@ -1,4 +1,4 @@
-package matrix;
+package ua.com.nov.matrix;
 
 import java.util.Arrays;
 

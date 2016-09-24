@@ -1,4 +1,4 @@
-package recursion;
+package ua.com.nov.recursion;
 
 import java.util.Stack;
 
