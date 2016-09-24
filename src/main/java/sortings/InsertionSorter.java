@@ -1,4 +1,4 @@
-package ua.com.nov.sortings;
+package sortings;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -53,19 +53,6 @@ public class InsertionSorter {
 2. Найдя позицию - смещайте всю часть массива за один вызов (System.arraycopy(...)). 
 В моих экспериментах эти две оптимизации ускорили сортировку в 2.2-2.6 раза. Скорость сортировки измерял данным кодом*/
 
-
-class App {
-    public static void main(String[] args) {
-        int[] array = new int[256 * 1024];
-        Random rnd = new Random(0);
-        for (int k = 0; k < array.length; k++) {
-            array[k] = rnd.nextInt();
-        }
-        long t1 = System.nanoTime();
-        InsertionSorter.sort(array);
-        System.out.println("A:" + (System.nanoTime() - t1) / 1_000_000);
-    }
-}
 
 class Test {
     public static void main(String[] args) {

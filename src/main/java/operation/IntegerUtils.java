@@ -1,4 +1,4 @@
-package ua.com.nov.bit.operation;
+package operation;
 
 
 public class IntegerUtils {
@@ -39,6 +39,6 @@ public class IntegerUtils {
 
     public static void main(String[] args) {
         System.out.println(Integer.toBinaryString(Integer.MIN_VALUE));
-        System.out.println(Integer.toBinaryString(rightShift(Integer.MIN_VALUE)));
+        System.out.println(Integer.toBinaryString(leftShift(Integer.MIN_VALUE)));
     }
 }

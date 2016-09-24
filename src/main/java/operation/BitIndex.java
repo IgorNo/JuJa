@@ -1,4 +1,4 @@
-package ua.com.nov.bit.operation;
+package operation;
 
 public class BitIndex {
     private long data;

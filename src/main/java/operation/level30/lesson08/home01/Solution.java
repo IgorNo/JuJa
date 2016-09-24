@@ -1,4 +1,4 @@
-package ua.com.nov.bit.operation.level30.lesson08.home01;
+package operation.level30.lesson08.home01;
 
 /* Swap по-новому
 В классе Pair реализуйте метод swap, который должен для x, y менять местами их значения.

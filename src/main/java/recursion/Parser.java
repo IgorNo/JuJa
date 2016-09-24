@@ -1,4 +1,4 @@
-package ua.com.nov.recursion;
+package recursion;
 
 public class Parser {
     public static void main(String[] args) {

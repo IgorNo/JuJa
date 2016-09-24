@@ -1,4 +1,4 @@
-package ua.com.nov.sortings;
+package sortings;
 
 import java.util.Arrays;
 

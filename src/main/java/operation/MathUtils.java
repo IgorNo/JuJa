@@ -1,4 +1,4 @@
-package ua.com.nov.bit.operation;
+package operation;
 
 import java.util.Arrays;
 

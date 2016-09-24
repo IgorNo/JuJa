@@ -1,4 +1,4 @@
-package ua.com.nov.arrays;
+package arrays;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;

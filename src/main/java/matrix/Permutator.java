@@ -1,7 +1,7 @@
-package ua.com.nov.matrix;
+package matrix;
 
 import java.util.Arrays;
- 
+
 public class Permutator {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};

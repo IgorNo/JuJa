@@ -1,4 +1,4 @@
-package ua.com.nov.bit.operation.level30.lesson08.home01;
+package operation.level30.lesson08.home01;
 
 public class Pair {
     private int x;
