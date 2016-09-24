@@ -25,4 +25,6 @@ abstract class AbstractShip {
     public String getName() {
         return name;
     }
+
+
 }

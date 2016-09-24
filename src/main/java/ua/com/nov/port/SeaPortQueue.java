@@ -1,5 +1,8 @@
 package ua.com.nov.port;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 interface SeaPortQueue {
     public final static int LENGTH_QUEUE_SHIP = 3;
     public int addShipToEndQueue(AbstractShip ship);
@@ -47,51 +50,58 @@ class OdessaSeaPort implements SeaPortQueue {
         return result;
     }
 
+    public static String sortSumPaymentAsc(AbstractShip[] arrayShips) {
+        String result = "";
+        if (arrayShips != null) {
+            Arrays.sort(arrayShips, new Comparator<AbstractShip>() {
+                @Override
+                public int compare(AbstractShip o1, AbstractShip o2) {
+                    return (int) (o1.calculatePayment() - o2.calculatePayment());
+                }
+            });
+            for (AbstractShip ship : arrayShips) {
+                result += ship.getName() + "=" + ship.calculatePayment();
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
-///check successful remove ship
-        String testLinerName = "NameTestLiner";
+
+        String testLinerName = "TestLinerName";
         float testLinerLength = 1000;
         float testLinerWidth = 1000;
         float testLinerDisplacement = 1000;
         int testLinerPassengers = 100;
-        String testCargoName = "NameTestCargo";
+        String testCargoName = "TestCargoName";
         float testCargoLength = 1000;
         float testCargoWidth = 1000;
         float testCargoDisplacement = 1000;
         float testCargoTonnage = 100;
-        String testTankerName = "NameTestTanker";
+        String testTankerName = "TestTankerName";
         float testTankerLength = 1000;
         float testTankerWidth = 1000;
         float testTankerDisplacement = 1000;
         float testTankerVolume = 100;
 
-        String expectedResultPrintShipQueueAfterRemove = "{Name=NameTestLinerLength=1000.0Width=1000.0Displacement=1000.0};{Name=NameTestTankerLength=1000.0Width=1000.0Displacement=1000.0};";
+        String expectedSortedShipString = "TestTankerName=25000.0TestCargoName=55000.0TestLinerName=100000.0";
 
-        int expectedSuccessfulStatusRemoveShipInQueue = 1;
+        // check arrays length > 0
+        AbstractShip[] arrayShips = {
+                new Liner(testLinerName, testLinerLength, testLinerWidth, testLinerDisplacement, testLinerPassengers),
+                new Cargo(testCargoName, testCargoLength, testCargoWidth, testCargoDisplacement, testCargoTonnage),
+                new Tanker(testTankerName, testTankerLength, testTankerWidth, testTankerDisplacement, testTankerVolume)
+        };
 
-        AbstractShip testLiner = new Liner(testLinerName, testLinerLength, testLinerWidth, testLinerDisplacement, testLinerPassengers);
-        AbstractShip testCargo = new Cargo(testCargoName, testCargoLength, testCargoWidth, testCargoDisplacement, testCargoTonnage);
-        AbstractShip testTanker = new Tanker(testTankerName, testTankerLength, testTankerWidth, testTankerDisplacement, testTankerVolume);
+        String actualSortedShipString = OdessaSeaPort.sortSumPaymentAsc(arrayShips);
 
-        OdessaSeaPort odessaSeaPort = new OdessaSeaPort();
-
-
-        odessaSeaPort.addShipToEndQueue(testCargo);
-        odessaSeaPort.addShipToEndQueue(testLiner);
-        odessaSeaPort.addShipToEndQueue(testTanker);
-
-
-        int actualSuccessfulStatusRemoveShipInQueue = odessaSeaPort.removeShipFromBeginQueue();
-        if (actualSuccessfulStatusRemoveShipInQueue != expectedSuccessfulStatusRemoveShipInQueue)
-            throw new AssertionError("Successful status remove ship in queue 1 but found " + actualSuccessfulStatusRemoveShipInQueue);
-
-        String actualPrintShipQueueAfterRemove = odessaSeaPort.printQueueShip();
-        if(!(actualPrintShipQueueAfterRemove.equals(expectedResultPrintShipQueueAfterRemove)))
-            throw new AssertionError("Expected to be printed " + expectedResultPrintShipQueueAfterRemove + " but found " + actualPrintShipQueueAfterRemove);
-
+        if (!(actualSortedShipString.equals(expectedSortedShipString)))
+            throw new AssertionError("Expected to be printed " + expectedSortedShipString + " but found " + actualSortedShipString);
 
         System.out.print("OK");
     }
 
 }
+
+
  
