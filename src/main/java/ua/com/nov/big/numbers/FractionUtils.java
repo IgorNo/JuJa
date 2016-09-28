@@ -24,7 +24,7 @@ public class FractionUtils {
     }
 
     public static void main(String[] args) {
-        BigInteger[] x = {new BigInteger("1"), new BigInteger("2")};
+        BigInteger[] x = {BigInteger.valueOf(1),BigInteger.valueOf(2)};
         BigInteger[] y = {new BigInteger("-1"), new BigInteger("2")};
         System.out.println(Arrays.toString(sum(x,y)));
     }
